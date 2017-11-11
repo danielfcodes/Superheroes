@@ -73,7 +73,7 @@ extension DetailViewController{
 extension DetailViewController: UITableViewDelegate{
   
   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    let headerHeight: CGFloat = UIScreen.main.bounds.width / 2 + 80
+    let headerHeight: CGFloat = view.frame.width / 2 + 80
     return headerHeight
   }
   

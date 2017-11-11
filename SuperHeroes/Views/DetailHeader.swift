@@ -69,12 +69,12 @@ class DetailHeader: UIView{
   }
   
   fileprivate func setupSuperheroImageView(){
-    let imageWidth: CGFloat = (UIScreen.main.bounds.width / 2) - 24
+    let imageWidth: CGFloat = (UIScreen.main.bounds.width / 2) - ConstraintConstants.margin
     
     addSubview(superheroImageView)
     
     superheroImageView.topAnchor.constraint(equalTo: topAnchor, constant: 24).isActive = true
-    superheroImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24).isActive = true
+    superheroImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: ConstraintConstants.margin).isActive = true
     superheroImageView.widthAnchor.constraint(equalToConstant: imageWidth).isActive = true
     superheroImageView.heightAnchor.constraint(equalTo: superheroImageView.widthAnchor, multiplier: 1).isActive = true
   }
@@ -82,25 +82,25 @@ class DetailHeader: UIView{
   fileprivate func setupSuperheroNameLabel(){
     addSubview(superheroNameLabel)
     
-    superheroNameLabel.centerYAnchor.constraint(equalTo: superheroImageView.centerYAnchor, constant: -16).isActive = true
-    superheroNameLabel.leadingAnchor.constraint(equalTo: superheroImageView.trailingAnchor, constant: 24).isActive = true
-    superheroNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24).isActive = true
+    superheroNameLabel.centerYAnchor.constraint(equalTo: superheroImageView.centerYAnchor, constant: -ConstraintConstants.margin).isActive = true
+    superheroNameLabel.leadingAnchor.constraint(equalTo: superheroImageView.trailingAnchor, constant: ConstraintConstants.margin).isActive = true
+    superheroNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -ConstraintConstants.margin).isActive = true
   }
   
   fileprivate func setupSuperheroStrengthLabel(){
     addSubview(superheroStrengthLabel)
     
     superheroStrengthLabel.topAnchor.constraint(equalTo: superheroNameLabel.bottomAnchor, constant: 16).isActive = true
-    superheroStrengthLabel.leadingAnchor.constraint(equalTo: superheroImageView.trailingAnchor, constant: 24).isActive = true
-    superheroStrengthLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24).isActive = true
+    superheroStrengthLabel.leadingAnchor.constraint(equalTo: superheroImageView.trailingAnchor, constant: ConstraintConstants.margin).isActive = true
+    superheroStrengthLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -ConstraintConstants.margin).isActive = true
   }
   
   fileprivate func setupSuperheroUniverseLabel(){
     addSubview(superheroUniverseLabel)
     
     superheroUniverseLabel.topAnchor.constraint(equalTo: superheroImageView.bottomAnchor, constant: 16).isActive = true
-    superheroUniverseLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24).isActive = true
-    superheroUniverseLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24).isActive = true
+    superheroUniverseLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: ConstraintConstants.margin).isActive = true
+    superheroUniverseLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -ConstraintConstants.margin).isActive = true
   }
   
   //MARK: Private methods
@@ -115,6 +115,16 @@ class DetailHeader: UIView{
     superheroNameLabel.text = "Name: \(superhero.name)"
     superheroStrengthLabel.text = "Strength: \(superhero.strength)"
     superheroUniverseLabel.text = "\(superhero.universe.rawValue.uppercased())"
+  }
+  
+}
+
+//MARK: Constants
+
+extension DetailHeader{
+  
+  fileprivate struct ConstraintConstants{
+    static let margin: CGFloat = 16
   }
   
 }

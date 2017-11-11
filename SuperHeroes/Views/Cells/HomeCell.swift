@@ -35,6 +35,8 @@ class HomeCell: UICollectionViewCell{
     label.textColor = UIColor.darkGray
     label.textAlignment = .center
     label.font = UIFont(name: "Avenir-Medium", size: 18)
+    label.minimumScaleFactor = 0.1
+    label.adjustsFontSizeToFitWidth = true
     return label
   }()
   
