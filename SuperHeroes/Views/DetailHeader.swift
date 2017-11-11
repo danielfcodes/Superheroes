@@ -103,7 +103,7 @@ class DetailHeader: UIView{
     superheroUniverseLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24).isActive = true
   }
   
-  //MARK: Privae methods
+  //MARK: Private methods
   
   fileprivate func fillUI(){
     switch superhero.universe{

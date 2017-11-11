@@ -15,7 +15,6 @@ class HomeCell: UICollectionViewCell{
     view.translatesAutoresizingMaskIntoConstraints = false
     view.backgroundColor = UIColor.white
     view.layer.cornerRadius = 10
-    //shadow
     view.layer.shadowColor = UIColor.black.cgColor
     view.layer.shadowOpacity = 0.5
     view.layer.shadowOffset = CGSize(width: 1, height: 1)
